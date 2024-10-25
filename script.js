@@ -8,59 +8,56 @@ Stampare a schermo la bici con peso minore.
 
  // Creo array di oggetti
  const bici = [
-     bici1 = {
+     {
          nome: 'BMX',
          kg: 10
      },
 
-     bici2 = {
+     {
          nome: 'Cargo bike',
          kg: 7,
      },
 
-     bici3 = {
+     {
          nome: 'Bici da corsa',
          kg: 5,
      },
 
-     bici4 = {
+     {
          nome: 'Gravel bike',
          kg: 12,
      },
 
-     bici5 = {
+     {
          nome: 'Tandem',
          kg: 20,
      },
 
-     bici6 = {
+     {
          nome: 'Mountain bike',
          kg: 15,
-     },
+     }
 
  ]
 
-//  console.log (bici)
+// RISULTATO FINALE -> BICI DA CORSA 5kg
 
-// creo costante
-const kgBici = bici [0];
+// Ciclo per scorrere tutto l'array
+// Condizione che verifichi il peso inferiore
 
-// ciclo for per stabilire peso inferiore
-for (let i = 1; i < bici.length; i++) {
-    if (bici[i].kg < kgBici.kg) {
-        kgBici == bici[i]
+let biciLeggera = bici[0]
+
+for (let i = 0; i < bici.length; i++) {
+    // console.log (i)
+    const elementoCorrente = bici[i]
+    // console.log (elementoCorrente)
+    if (elementoCorrente.kg < biciLeggera.kg) {
+       biciLeggera = elementoCorrente 
     }
 }
 
-console.log (`La bici ${kgBici.nome} è la più leggera e pesa ${kgBici.kg} kg`)
-
-// PROVA
-// const bici = {
-//     nome: 'Mountain Bike',
-//     kg: 6
-// }
-// console.log (bici.kg)
-
+console.log (biciLeggera)
+//  console.log (bici)
 
 
 /* Snack2
@@ -108,14 +105,14 @@ Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subit
 
 //  console.log (squadre)
 
- // creo ciclo for per assegnare numeri random
+// creo ciclo for per assegnare numeri random
 
 const datiSquadra = []
 
 for (let i = 0; i < squadre.length; i++) {
   const totSquadre = squadre[i]
-  totSquadre.falliSubiti = (Math.floor(Math.random()*50)+1)
   totSquadre.puntiFatti = (Math.floor(Math.random()*50)+1)
+  totSquadre.falliSubiti = (Math.floor(Math.random()*50)+1)
 
   console.log (totSquadre)
   console.log("Punti fatti:",totSquadre.puntiFatti)
@@ -123,6 +120,8 @@ for (let i = 0; i < squadre.length; i++) {
 
   datiSquadra.push(totSquadre.nome)
   datiSquadra.push(totSquadre.falliSubiti)
+
+// stampo nome e falli subiti
   console.log("Nome e falli subiti:",datiSquadra)
 }
 
